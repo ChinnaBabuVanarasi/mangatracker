@@ -1,4 +1,4 @@
-# MangaTrackerX
+MangaTrackerX
 ----
 ## App to extract and track latest chapters of listed Manga links and redirect to their source website.
 
