@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+csv_files/manga_en_images.csv
+data_ingestion_logs/
+
 # Distribution / packaging
 .Python
 build/
@@ -25,6 +28,9 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.xml
+*.iml
+.idea/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
