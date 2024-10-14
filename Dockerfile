@@ -19,7 +19,7 @@ RUN pip install -r requirements.txt
 COPY . ./
 
 # Expose the port your app runs on
-EXPOSE 8000
+EXPOSE 8080
 
 # Command to run the application
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "$PORT"]
