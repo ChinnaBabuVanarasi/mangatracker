@@ -18,7 +18,6 @@ RUN pip install -r requirements.txt
 # Copy the rest of the project into the container
 COPY . ./
 
-# Expose the port your app runs on
 
 # Command to run the application
-CMD exec gunicorn --bind :$PORT --workers 3 --threads 8 --timeout 0 app:app
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "$PORT"]
