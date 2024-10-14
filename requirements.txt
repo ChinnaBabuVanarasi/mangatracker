@@ -1,0 +1,11 @@
+pymongo
+pandas
+selenium
+requests
+Flask
+beautifulsoup4
+python-dotenv
+colorama
+fastapi
+uvicorn
+pydantic
