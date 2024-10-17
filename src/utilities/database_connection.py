@@ -1,4 +1,3 @@
-import json
 import os
 
 from dotenv import load_dotenv
@@ -28,13 +27,14 @@ def get_database_connection():
         return None
 
 
-def get_collection(collection_name: str, db=None):
+def get_collection(collection_name: str=None, db=None):
     """Fetches a specific collection from the MongoDB database."""
     if db is None:  # Create connection if not provided
         db = get_database_connection()
     collection = os.getenv(COLLECTIONS.get(collection_name))
+    print(collection)
     if collection:
-        print(f'Successfully connected to Collection: {collection_name}!!')
         return db[collection]
-    raise ValueError(
+    else:
+        raise ValueError(
         f"No Collection Found with the name '{collection_name}'. Please check your collection name and try again.")

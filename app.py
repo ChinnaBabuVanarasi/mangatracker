@@ -3,7 +3,6 @@ from starlette import status
 
 from src.utilities.mongodb_crud_api import get_records, insert_records, delete_records
 from src.models.PostModels import PostLinks
-# from ..models.PostModels import PostLinks
 
 app = FastAPI()
 
