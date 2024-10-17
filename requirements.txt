@@ -6,3 +6,5 @@ pymongo
 requests
 selenium
 gunicorn
+fastapi
+starlette
