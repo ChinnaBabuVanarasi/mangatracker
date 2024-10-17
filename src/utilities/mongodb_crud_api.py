@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
-
-from fastapi import HTTPException
-
 from src.utilities.database_connection import get_collection
 
 
