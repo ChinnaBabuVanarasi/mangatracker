@@ -38,12 +38,12 @@ def get_collection(collection_name: str = None, db=None):
     if db is None:
         db = get_database_connection()  # Ensure connection
 
-    collection_name = COLLECTIONS.get(collection_name)  # Use direct mapping
+    collection = COLLECTIONS.get(collection_name)  # Use direct mapping
 
-    if collection_name:
-        collection = db[collection_name]
+    if collection:
+        collection_con = db[os.getenv(collection)]
         print(f"Retrieved collection: {collection_name}")
-        return collection
+        return collection_con
     else:
         print(f"No Collection Found with the internal name: {collection_name}")
         raise ValueError(
