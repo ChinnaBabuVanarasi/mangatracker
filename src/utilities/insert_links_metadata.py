@@ -70,7 +70,7 @@ def get_image(soup, manga_title):
         }
 
 
-def process_and_insert_manga_data(links_list, collection_name, logger):
+def process_and_insert_manga_data(links_list, collection_name,logger):
     """Processes manga links, extracts details if necessary, and inserts them into the database.
 
     Args:

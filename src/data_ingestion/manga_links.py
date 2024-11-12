@@ -11,10 +11,9 @@ def insert_links_to_csv():
     collection_name = get_collection("get_csv_links")
     # File path handling within the script (no user input needed)
     file_path = os.path.join(Path(os.getcwd()).parent.parent.resolve(), "csv_files/manga_links.csv")
-    use_database = False  # Set to True if reading from the database
-    links = get_links(filepath=file_path if not use_database else None, use_db=use_database)
-    # sent_links = links[:5]
-    # print(sent_links)
+    csv_links = [link['manga_url'] for link in get_links(filepath=file_path)]
+    db_links = [link['manga_url'] for link in get_links(use_db=True)]
+    links = [link for link in csv_links if link not in db_links]
     log_name = setup_logging(filename='csv_links_ingestion')
     process_and_insert_manga_data(links_list=links, collection_name=collection_name, logger=log_name)
 
